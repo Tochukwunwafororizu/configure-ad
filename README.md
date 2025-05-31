@@ -31,9 +31,10 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>Deployment and Configuration Steps</h2>
 
-<p>
-  
-jhhljkk
+
+In this Lab we will create two VMs in the same VNET. One will be a Domain Controller, the other will be a Client Machine.The virtual machine is going to act as a client machine which is going to serve as Cient that will join the domain controller .
+Ww will control the DNS settings on the Client machine, the Client machine will use the Domanin Controller as its DNS server. Note: We will change the DC (Domain Controller) to  a static IP because it's offering Active Directory services to the 
+Client Machine.
 <p>
 <img src="https://i.imgur.com/WcMjiXR.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
