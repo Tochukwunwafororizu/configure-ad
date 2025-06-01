@@ -92,3 +92,7 @@ Login to the Domain Controller and verify Client-1 shows up in ADUC. Create a ne
 <img src="https://i.imgur.com/lgQLxlB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <img src="https://i.imgur.com/Aa4x3Ca.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <img src="https://i.imgur.com/xZdnqOn.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+<p>
+</p>
+Next: Create non-administrative user on Client-1 by logging into Client-1 as mydomain.com\jane_admin and open system properties. Allow domain users access to remote desktop we can now log into Client-1 as a normal, non-administrative user now.
