@@ -58,7 +58,17 @@ Next is to go to Azure portal and restart Client-1 and try to ping DC-1  private
 <br />
 <img src="https://i.imgur.com/EXGCMeo.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+Next is to install Active Directory Domain Services from DC-1. Click start menu- Server manager - Add features/roles-Next-Next, in the Server selection there should be only DC-1 that is there. On server roles we will install Active Directory
+Domain services. Click Add Features-Next-Next-Next click restart  if required and install. Next is to configure the installed Active Directory into a Domain controller and name it as my Domain.com. After installation is completed, DC-1 automatically
+logs me off. Next, log back in DC-1 as user: mydomain.com\labuser. The reason is because we basically turned this VM into Domain Controller. The context of this is when people log in now the user account essist in the Domain we are going to use to log
+back in and the user.
+
+
+<img src="https://i.imgur.com/9oBoqti.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/SUDKHi7.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/YMCbrow.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
 </p>
 <p>
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
