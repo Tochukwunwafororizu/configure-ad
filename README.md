@@ -71,6 +71,24 @@ back in and the user.
 
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Next is to create Domain Admin User within the Domain.  Having a Domain User is such a big deal in real life because the Domain Admin has so many rights across the Domain which includes assigning permisions to Managing Organizational Units (OUS),
+establishing group policy objects (GPOS) etc. We are going to create our Organizational Units  called _EMPLOYEES. Basically, we will create two folder one called _employees and another _Admins. We will create a Domain Admin inside of this Admin folder.
+
 </p>
 <br />
+<img src="https://i.imgur.com/Bs0VPTP.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+<p>
+</p>
+Next, we are going to create a new employee named "Jane Doe" as Admin. Add him to Domain Admin security group. Next log out  from DC-1 and log back again as mydomain.com\Jane_admin. Next Login to Client-1 and join it to the domain (computer will restart) 
+Login to the Domain Controller and verify Client-1 shows up in ADUC. Create a new Organizational Unit  named “_CLIENTS” and drag Client-1 into there.
+
+
+</p>
+<br />
+<img src="https://i.imgur.com/z7T0Op5.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/eAyeCTS.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/WZjJmpp.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/lgQLxlB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/Aa4x3Ca.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/xZdnqOn.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
