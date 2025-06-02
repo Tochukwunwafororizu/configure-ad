@@ -96,3 +96,15 @@ Login to the Domain Controller and verify Client-1 shows up in ADUC. Create a ne
 <p>
 </p>
 Next: Create non-administrative user on Client-1 by logging into Client-1 as mydomain.com\jane_admin and open system properties. Allow domain users access to remote desktop we can now log into Client-1 as a normal, non-administrative user now.
+<img src="https://i.imgur.com/WW5PFvh.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+<p>
+</p>
+Next: We are going to use powershell to create a whole bunch of users inside  Active Directory. To do that, we are going to login to DC-1 as jane_admin and open powershell_ise as an administrator. Create a new file and paste the information of the script
+into it and run the script and observe the account being created. When we are done, we will open Active Directory Users and Computers and we will observe the account in the approprriate organizational unit "_EMPLOYEE" section. finally we are going to 
+pick one user (redu.figu) created and attempt to login with it in Client-1  remote desktop and see if it works (take note of the password in the script).
+ 
+<img src="https://i.imgur.com/7kYTtiq.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/tFn88lX.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/OIH7AUc.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/Gmrz5Fo.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
