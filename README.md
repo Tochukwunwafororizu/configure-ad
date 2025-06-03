@@ -108,3 +108,9 @@ pick one user (redu.figu) created and attempt to login with it in Client-1  remo
 <img src="https://i.imgur.com/tFn88lX.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <img src="https://i.imgur.com/OIH7AUc.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <img src="https://i.imgur.com/Gmrz5Fo.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+<p>
+</p>
+Finally working on Group policy and Managing Accounts. We will be dealing with Account Lockouts. To do that, we will pick a random user account we  create previously and attempt to login with it 10 times with a bad password and observe that the account has 
+been locked out within Active Directory. We will then unlock the account, Reset the password and attempt to log in with it.
+
