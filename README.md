@@ -111,6 +111,11 @@ pick one user (redu.figu) created and attempt to login with it in Client-1  remo
 
 <p>
 </p>
-Finally working on Group policy and Managing Accounts. We will be dealing with Account Lockouts. To do that, we will pick a random user account we  create previously and attempt to login with it 10 times with a bad password and observe that the account has 
-been locked out within Active Directory. We will then unlock the account, Reset the password and attempt to log in with it.
+Finally working on Group policy and Managing Accounts. We will be dealing with Account Lockouts. To do that,  we first need to set up Account Lockout Policy in Active Directory, so we are going to use Group Policy to configure it.We are going to login into the Domain
+Controller and to the search bar and type gpmc.msc and open Group Policy Management Console. Go to my domain.com and expand and right click to edit Default Domain Policy. In the Group Policy Management Editor, expand Computer Configuration - Policy -Window settings - Security Settings - Account Policies - Account Lockout Policy and configure Account Lockout Policy Settings. we will then pick a random user account we  created previously in DC-1 and attempt to login with it in Client-1 10 times with a bad password and observe that the account has been locked out within Active Directory. We will then unlock the account, Reset the password and attempt to log in with it.
 
+<img src="https://i.imgur.com/MtqpqAl.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/D0iRplO.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/kutaCoO.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
