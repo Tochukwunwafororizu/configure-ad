@@ -33,11 +33,14 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 
 In this Lab we will create two VMs in the same VNET. One will be a Domain Controller and the other will be a Client Virtual machine. The client VM  which is going to serve as Cient  will be joined to the domain controller .
-We will control the DNS settings on the Client to use the Domain Controller as its DNS server. Note: We will change the DC (Domain Controller) to  a static  private IP Address which will not change no matter if the computer is restarted.
+We will control the DNS settings on the Client to use the Domain Controller as its DNS server. Note: We will change the DC (Domain Controller) from dynamic to  a static  private IP Address which will not change no matter if the computer is restarted.
 The reason is because it's offering Active Directory services to the Client Machine.
 
 <p>
-<img src="https://i.imgur.com/WcMjiXR.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/eFkGDVS.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+ <img src="https://i.imgur.com/3yRgKKv.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
 </p>
 <p>
 After the VM is created, we are going to turn off the firewall. Right click on the start menu on the Domain Controller and click run and type wf.msc for windows firewall and turn off the firewall. We are going to set Client-1's DNS settings
@@ -52,7 +55,7 @@ and paste our private IP Address we copied from DC-1. So whenever the computer w
 </p>
 <img src="https://i.imgur.com/7XSCqcX.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <p>
-Next is to go to Azure portal and restart Client-1 and try to ping DC-1  private IP Address from Client-1 and see if it works. 
+Next is to go to Azure portal and restart Client-1 and try to ping DC-1  private IP Address from Client-1 and it should work. 
 </p>
 <img src="https://i.imgur.com/6Dwglkx.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
