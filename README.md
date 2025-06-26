@@ -27,7 +27,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <h2>Deployment and Configuration Steps</h2>
 
 
-In this Lab we will create two VMs in the same VNET. One will be a Domain Controller and the other will be a Client Virtual machine. The client VM  which is going to serve as Cient  will be joined to the domain controller .
+In this Lab, we will create two VMs in the same VNET. One will be a Domain Controller and the other will be a Client Virtual machine. The client VM,  which is going to serve as Client  will be joined to the Domain Controller .
 We will control the DNS settings on the Client to use the Domain Controller as its DNS server. Note: We will change the DC (Domain Controller) from dynamic to  a static  private IP Address which will not change no matter if the computer is restarted.
 The reason is because it's offering Active Directory services to the Client Machine.
 
@@ -39,7 +39,7 @@ The reason is because it's offering Active Directory services to the Client Mach
 </p>
 <p>
 After the VM is created, we are going to turn off the firewall. Right click on the start menu on the Domain Controller and click run and type wf.msc for windows firewall and turn off the firewall. We are going to set Client-1's DNS settings
-to DC-1'S Private Address. We are simply going to use the private IP Address of DC-1 and go to Client-1 network interface/IP configuration. On the left go to DNS servers and change it from inherent from vitual network from AZure to customs
+to DC-1'S Private Address. We are simply going to use the private IP Address of DC-1 and go to Client-1 network interface/IP configuration. On the left go to DNS servers and change it from inherent from vitual network from AZure to custom
 and paste our private IP Address we copied from DC-1. So whenever the computer wants to look up anything it will look to DC-1 for it instead of Vnet DNS servers.
 </p>
 
@@ -57,9 +57,9 @@ Next is to go to Azure portal and restart Client-1 and try to ping DC-1  private
 <img src="https://i.imgur.com/EXGCMeo.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <p>
 </p>
-Next is to install Active Directory Domain Services from DC-1. Click start menu- Server manager - Add features/roles-Next-Next, in the Server selection there should be only DC-1 that is there. On server roles we will install Active Directory
-Domain services. Click Add Features-Next-Next-Next click restart  if required and install. Next is to configure the installed Active Directory into a Domain controller and name it as my Domain.com. After installation is completed, DC-1 automatically
-logs me off. Next, log back in DC-1 as user: mydomain.com\labuser. The reason is because we basically turned this VM into Domain Controller. The context of this is when people log in now the user account essist in the Domain we are going to use to log
+Next is to install Active Directory Domain Services from DC-1. Click start menu > Server manager > Add features/roles-Next-Next, in the Server selection there should be only DC-1 that is there. On server roles we will install Active Directory
+Domain services. Click Add Features > Next > Next > Next click restart  if required and install. Next is to configure the installed Active Directory into a Domain controller and name it as my Domain.com. After installation is completed, DC-1 automatically
+logs me off. Next, log back in DC-1 as user: mydomain.com\labuser. The reason is because we basically turned this VM into Domain Controller. The context of this is when people log in now the user account show in the Domain we are going to use to log
 back in and the user.
 
 
@@ -78,8 +78,8 @@ establishing group policy objects (GPOS) etc. We are going to create our Organiz
 
 <p>
 </p>
-Next, we are going to create a new employee named "Jane Doe" as Admin. Add him to Domain Admin security group. Next log out  from DC-1 and log back again as mydomain.com\Jane_admin. Next Login to Client-1 and join it to the domain (computer will restart) 
-Login to the Domain Controller and verify Client-1 shows up in ADUC. Create a new Organizational Unit  named “_CLIENTS” and drag Client-1 into there.
+Next, we are going to create a new employee named "Jane Doe" as Admin. Add her to Domain Admin security group. Next log out  from DC-1 and log back again as mydomain.com\Jane_admin. Next Login to Client-1 and join it to the domain (computer will restart) 
+Login to the Domain Controller and verify Client-1 shows up in ADUC (Active Directory Users and Computers). Create a new Organizational Unit  named “_CLIENTS” and drag Client-1 into there.
 
 
 </p>
@@ -93,7 +93,7 @@ Login to the Domain Controller and verify Client-1 shows up in ADUC. Create a ne
 
 <p>
 </p>
-Next: Create non-administrative user on Client-1 by logging into Client-1 as mydomain.com\jane_admin and open system properties. Allow domain users access to remote desktop we can now log into Client-1 as a normal, non-administrative user now.
+Next: Create non-administrative user on Client-1 by logging into Client-1 as mydomain.com\jane_admin and open System Properties. Allow Domain Users access to Remote Desktop we can now log into Client-1 as a normal, non-administrative user now.
 <img src="https://i.imgur.com/WW5PFvh.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
 <p>
@@ -109,7 +109,7 @@ pick one user (redu.figu) created and attempt to login with it in Client-1  remo
 
 <p>
 </p>
-Next: We will be working on Group policy and Managing Accounts. We will be dealing with Account Lockouts. To do that,  we first need to set up Account Lockout Policy in Active Directory, so we are going to use Group Policy to configure it.We are going to login into the Domain
+Next: We will be working on Group policy and Managing Accounts. We will be dealing with Account Lockouts. To do that,  we first need to set up Account Lockout Policy in Active Directory, so we are going to use Group Policy to configure it. We are going to login into the Domain
 Controller and to the search bar and type gpmc.msc and open Group Policy Management Console. Go to my domain.com and expand and right click to edit Default Domain Policy. In the Group Policy Management Editor, expand Computer Configuration - Policy -Window settings - Security Settings - Account Policies - Account Lockout Policy and configure Account Lockout Policy Settings. we will then pick a random user account we  created previously in DC-1 and attempt to login with it in Client-1 10 times with a bad password and observe that the account has been locked out within Active Directory. We will then go to Domain Controller and right click on mydomain.com and find the Account and   unlock the account, Reset the password and attempt to log in with the right password  in Client-1 and it should work.
 
 <img src="https://i.imgur.com/MtqpqAl.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
@@ -123,7 +123,7 @@ Controller and to the search bar and type gpmc.msc and open Group Policy Managem
 
 <p>
 </p>
-Next: We will be disenabling and enabling accounts in Active Directory. To do that right click on the account and disable the account. To activate the account  right click on the account to eanble it back.
+Next: We will be disabling and enabling accounts in Active Directory. To do that right click on the account and disable the account. To activate the account  right click on the account to eanble it back.
 
 <img src="https://i.imgur.com/4WerXI7.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <img src="https://i.imgur.com/sXwvU5A.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
